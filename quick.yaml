@@ -196,3 +196,34 @@ targets:
         # Monitor only 0.3.x+.
         exclude_tags:
           - "0.[0-2]*"
+
+  - name: trivy-checks
+    github:
+      owner: aquasecurity
+      repo: trivy-checks
+      releases: true
+      tags: true
+    images:
+      - repository: docker.io/aquasec/trivy-checks
+        # Monitor only 2+
+        exclude_tags:
+          - "1*"
+          - "2.*"
+          - "nightly"
+          - "latest"
+      - repository: ghcr.io/aquasecurity/trivy-checks
+        # Monitor only 2+
+        exclude_tags:
+          - "0*"
+          - "1*"
+          - "2.*"
+          - "nightly"
+          - "latest"
+      - repository: ghcr.io/aquasecurity/trivy-policies
+        # Monitor only 2+
+        exclude_tags:
+          - "0*"
+          - "1*"
+          - "2.*"
+          - "nightly"
+          - "latest"
