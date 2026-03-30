@@ -4,6 +4,8 @@
 
 defaults:
   on_new_release: error
+  on_new_tag: error
+  on_new_image: error
   cosign:
     identity: "https://github\\.com/aquasecurity/"
     oidc_issuer: "https://token\\.actions\\.githubusercontent\\.com"

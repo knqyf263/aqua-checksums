@@ -1,5 +1,7 @@
 defaults:
   on_new_release: notify
+  on_new_tag: notify
+  on_new_image: notify
   cosign:
     identity: "https://github\\.com/aquasecurity/"
     oidc_issuer: "https://token\\.actions\\.githubusercontent\\.com"
