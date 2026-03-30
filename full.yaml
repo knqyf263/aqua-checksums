@@ -1,0 +1,101 @@
+defaults:
+  on_new_release: notify
+  on_new_tag: notify
+  on_new_image: notify
+  cosign:
+    identity: "https://github\\.com/aquasecurity/"
+    oidc_issuer: "https://token\\.actions\\.githubusercontent\\.com"
+    required: false
+    exclude_tags:
+      - "canary"
+      - "*-SNAPSHOT-*"
+      # Architecture-specific tags are not individually signed;
+      # cosign signatures are attached to the multi-arch manifest index only.
+      - "*-amd64"
+      - "*-arm64"
+      - "*-arm64v8"
+      - "*-ppc64le"
+      - "*-s390x"
+  tlog_timestamp_tolerance: 24h
+  assets: true
+
+targets:
+  - name: trivy
+    github:
+      owner: aquasecurity
+      repo: trivy
+      releases: true
+      tags: true
+    images:
+      - repository: ghcr.io/aquasecurity/trivy
+      - repository: public.ecr.aws/aquasecurity/trivy
+      - repository: docker.io/aquasec/trivy
+    tags:
+      exclude:
+        # Known compromised tags from March 2026 incident
+        - "0.69.4"
+        - "0.69.5"
+        - "0.69.6"
+
+  - name: trivy-action
+    github:
+      owner: aquasecurity
+      repo: trivy-action
+      releases: true
+      tags: true
+    assets: false
+
+  - name: setup-trivy
+    github:
+      owner: aquasecurity
+      repo: setup-trivy
+      releases: true
+      tags: true
+    assets: false
+
+  - name: kube-bench
+    github:
+      owner: aquasecurity
+      repo: kube-bench
+      releases: true
+      tags: true
+    images:
+      - repository: docker.io/aquasec/kube-bench
+
+  - name: trivy-operator
+    github:
+      owner: aquasecurity
+      repo: trivy-operator
+      releases: true
+      tags: true
+    images:
+      - repository: ghcr.io/aquasecurity/trivy-operator
+      - repository: docker.io/aquasec/trivy-operator
+
+  - name: tfsec
+    github:
+      owner: aquasecurity
+      repo: tfsec
+      releases: true
+      tags: true
+    images:
+      - repository: ghcr.io/aquasecurity/tfsec
+      - repository: docker.io/aquasec/tfsec
+
+  - name: tracee
+    github:
+      owner: aquasecurity
+      repo: tracee
+      releases: true
+      tags: true
+    images:
+      - repository: docker.io/aquasec/tracee
+
+  - name: kube-hunter
+    github:
+      owner: aquasecurity
+      repo: kube-hunter
+      releases: true
+      tags: true
+    images:
+      - repository: docker.io/aquasec/kube-hunter
