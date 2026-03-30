@@ -184,3 +184,10 @@ targets:
           - "aqua"
           - "edge"
           - "latest"
+
+  - name: k8s-node-collector
+    github:
+      owner: aquasecurity
+      repo: k8s-node-collector
+      releases: true
+      tags: true

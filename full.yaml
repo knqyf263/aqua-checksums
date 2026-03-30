@@ -99,3 +99,10 @@ targets:
       tags: true
     images:
       - repository: docker.io/aquasec/kube-hunter
+
+  - name: k8s-node-collector
+    github:
+      owner: aquasecurity
+      repo: k8s-node-collector
+      releases: true
+      tags: true
