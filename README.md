@@ -30,7 +30,7 @@ These attacks are difficult to detect from inside the target repository because 
 | [tfsec](https://github.com/aquasecurity/tfsec) | Yes | Yes | GHCR, Docker Hub | — | [state/tfsec.tsv](state/tfsec.tsv) |
 | [tracee](https://github.com/aquasecurity/tracee) | Yes | Yes | Docker Hub | Yes | [state/tracee.tsv](state/tracee.tsv) |
 | [kube-hunter](https://github.com/aquasecurity/kube-hunter) | Yes | Yes | Docker Hub | — | [state/kube-hunter.tsv](state/kube-hunter.tsv) |
-| [k8s-node-collector](https://github.com/aquasecurity/k8s-node-collector) | Yes | Yes | — | — | [state/k8s-node-collector.tsv](state/k8s-node-collector.tsv) |
+| [k8s-node-collector](https://github.com/aquasecurity/k8s-node-collector) | Yes | Yes | GHCR | Yes | [state/k8s-node-collector.tsv](state/k8s-node-collector.tsv) |
 
 ## How it works
 

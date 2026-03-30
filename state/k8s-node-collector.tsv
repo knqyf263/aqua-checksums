@@ -170,6 +170,63 @@ asset	v0.3.1/k8s-node-collector_linux_ARM64.tar.gz.sig	sha256:c14193b01fdac90ea5
 asset	v0.3.1/k8s-node-collector_linux_x86_64.tar.gz	sha256:fe5d7aefbbadc6bf5133e29e175cb6efbe4fa105b189d1e21b591446bd0103d3	unsigned			2024-06-24T10:56:16Z
 asset	v0.3.1/k8s-node-collector_linux_x86_64.tar.gz.pem	sha256:c108f7cb23b38f4ab02676bfee62bb4065a3f35797682a7bfaad058a79d43bd8	unsigned			2024-06-24T10:56:16Z
 asset	v0.3.1/k8s-node-collector_linux_x86_64.tar.gz.sig	sha256:52c7e0af29cfec9b392e5b372fd55955adf3218aa3ce49b599732ec99d6ab10a	unsigned			2024-06-24T10:56:16Z
+image	ghcr.io/aquasecurity/node-collector:0.0.1	sha256:71f1efe2a006e72bdbf8897aa702a1f163f1b1b066fcc2be82596d27784b0e77	verified	cosign:tag-based	2022-12-25T10:51:00Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.1-amd64	sha256:2ee40bb0eab9ad5f1c592b26205df3bde5436502c6913b3d1e0b87c3a3b8cd88	verified	cosign:tag-based	2022-12-25T10:50:55Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.1-arm64	sha256:6042fe83b74c5670408ee15032c486a720ed4a82308786858559dc41c0c676e0	verified	cosign:tag-based	2022-12-25T10:50:50Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.2	sha256:9e48614e83d408361c2050c0aae57eb1b36aff2962945cd14f60d9e44a1049f7	verified	cosign:tag-based	2022-12-27T07:46:31Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.2-amd64	sha256:e38ed1ece9431d1ac209a7be45cabf48d85cfa7afe809169ba8f54c09a8a56e4	verified	cosign:tag-based	2022-12-27T07:46:26Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.2-arm64	sha256:dde921cf8a5508c1eea88f6ab81647dc396249e1a47dd57064b792d8ce9cf7d1	verified	cosign:tag-based	2022-12-27T07:46:21Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.3	sha256:bf09fcc0f7906edf589a746be99d0b4c0c82d47805fd5fc9ec3cb965903fe240	verified	cosign:tag-based	2023-01-04T09:44:32Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.3-amd64	sha256:809a86963b7dac254630865bf191156c71af2ccf46ae0ce39b82d43844c362f4	verified	cosign:tag-based	2023-01-04T09:44:28Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.3-arm64	sha256:911c1c1bd36914a9a47d37205b4fb5791a2154c7079aa69091068a3af180603b	verified	cosign:tag-based	2023-01-04T09:44:23Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.4	sha256:a4d4b1efec6bb71e2dfadaca5ef26a5e173a222cc9860d8603fad386b223dae3	verified	cosign:tag-based	2023-01-13T14:48:17Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.4-amd64	sha256:e2e061c87707ba1f054db34adc538a142d4e68ea010c69d9bc89347b07a3681e	verified	cosign:tag-based	2023-01-13T14:48:12Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.4-arm64	sha256:a0dc321407f19245c299378cb3c412453c8cf1fa0d60884439b003f5e0018910	verified	cosign:tag-based	2023-01-13T14:48:07Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.5	sha256:47d450d4ccaf1cec55f82a461316b2c8ce4c001c36a38fced7d09e64c843c8e0	verified	cosign:tag-based	2023-01-13T18:28:01Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.5-amd64	sha256:ee15511c6570023a90d28651aa97333ddba6f2b77900a148a32023839cdd9e0d	verified	cosign:tag-based	2023-01-13T18:27:51Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.5-arm64	sha256:4a0f1c9a0770a6d3b696ddb111ca56bdc02b97d9617894da4e0badf229a1b516	verified	cosign:tag-based	2023-01-13T18:27:56Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.6	sha256:1f4d8f1899eb5eb43f8e5d56e252004b27b3cdbe24512a129917c7c5517ffe60	verified	cosign:tag-based	2023-04-03T07:31:43Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.6-amd64	sha256:1b83644363f7bed6dc0e97377e30f7d1fbed28a5cfd6979f59eaabb1da607a01	verified	cosign:tag-based	2023-04-03T07:31:40Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.6-arm64	sha256:d27d99ef364a74f76067f8228817aa207977f31cdb70df9123a70b4c1c57994d	verified	cosign:tag-based	2023-04-03T07:31:37Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.7	sha256:20dac75dc44aeef66551283d71a56f1d0ae69388b9c4ba3c900a8e368021f27a	verified	cosign:tag-based	2023-06-29T09:32:21Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.7-amd64	sha256:de0b1ce24f1ce126ffe5967bcf5215faac99495812c4808f7c350d598b8ff095	verified	cosign:tag-based	2023-06-29T09:32:16Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.7-arm64	sha256:9df6a9c343296e83378bd52bc6fffd1be9c9a0ec17524fd93cd6dd4638a644e3	verified	cosign:tag-based	2023-06-29T09:32:18Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.8	sha256:db166b5237b7a11769f6584151bef4bdddb55c9b07fc31caacf249844b48eea3	verified	cosign:tag-based	2023-09-11T05:51:51Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.8-amd64	sha256:ebd771200e7f2bbae0fb187c43d10068107005d29510ec686dc245661af51acd	verified	cosign:tag-based	2023-09-11T05:51:46Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.8-arm64	sha256:b757f935b3c0a238d1614adb444c8b86364df5b5bb33324113ca07152e9dde7d	verified	cosign:tag-based	2023-09-11T05:51:48Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.9	sha256:ca7327086bb3cc9d0a417c71116494f7d06a0d957a6bf0960a5a2e2744b8156a	verified	cosign:tag-based	2023-11-15T09:39:19Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.9-amd64	sha256:be6403cdb49a412fb5def28d279c0542a29df7a6f7e85bb39706014d83a7c4a2	verified	cosign:tag-based	2023-11-15T09:39:15Z	-
+image	ghcr.io/aquasecurity/node-collector:0.0.9-arm64	sha256:def35bd1eed0be453b59f65b9248d4b243fedb3d29a774bf60e0a678292b48d4	verified	cosign:tag-based	2023-11-15T09:39:17Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.0	sha256:2bf283e8b7f69b982c10ae6763972cf75c5f202a7bb705690cfb3a70d638732b	verified	cosign:tag-based	2023-12-20T07:22:20Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.0-amd64	sha256:fdccb906da733f5ad2128268c181c1eb7d029b3078b7ea0f2da6395b91e9e4a9	verified	cosign:tag-based	2023-12-20T07:22:16Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.0-arm64	sha256:5f9ced4b96a5ec839237dd232b3ac62d8c485b15395d1772dc282f149c6e5e37	verified	cosign:tag-based	2023-12-20T07:22:18Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.1	sha256:4ba9adf1b35ff7b46aa57ea0c3d3a83ea37b181c06b31df613b67a54bd166af2	verified	cosign:tag-based	2023-12-20T11:20:03Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.1-amd64	sha256:a15ed063a5a3079f2a77d4cc335493fd12a30ff59afde413aea51a81b1019ba2	verified	cosign:tag-based	2023-12-20T11:19:56Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.1-arm64	sha256:6b38ed6b049fa33b72b37e2b4b353479367864b6dd4173a286a8d4366e0eb1d0	verified	cosign:tag-based	2023-12-20T11:20:00Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.2	sha256:e7b90af2c94a0b86dae7b52f6250b3ed75b386421d1cab625547431a729c1a7c	verified	cosign:tag-based	2024-02-18T09:59:35Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.2-amd64	sha256:cd8daf88f1635cb756e4e0c1abee586cdf0785405fa7425ad8c3b92851aedee4	verified	cosign:tag-based	2024-02-18T09:59:31Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.2-arm64	sha256:2aac863261eb75d51c5bf2ba482527759fe4c1d037d4add9133bb45e7e9844f2	verified	cosign:tag-based	2024-02-18T09:59:33Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.3	sha256:3194fa176e29467659b73d90966605c21aca1352bfb6b3b3ca2cdf9f6983c99e	verified	cosign:tag-based	2024-04-15T10:41:32Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.3-amd64	sha256:b19b7e9b115212d7d0f734e28c67b96954be358fd96fe27c8e395ae3e0e01d4a	verified	cosign:tag-based	2024-04-15T10:41:29Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.3-arm64	sha256:89164ae04921b89344228c6acef2713e5a2aa92546644a2ae204201875df0c44	verified	cosign:tag-based	2024-04-15T10:41:30Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.4	sha256:ce0de5fa13f089cea60b51f2e5b3f284bab3992a556631072ea9c8a591669c71	verified	cosign:tag-based	2024-04-17T12:38:03Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.4-amd64	sha256:a1431412edb0c4a5765c4f2a7cc9cccd17dca189871a09ef22fb4421f4a2acfb	verified	cosign:tag-based	2024-04-17T12:37:58Z	-
+image	ghcr.io/aquasecurity/node-collector:0.1.4-arm64	sha256:61525d58c33fc28a46f42771d56bc44e206c80f5018f940e19c9a40249b1f647	verified	cosign:tag-based	2024-04-17T12:38:01Z	-
+image	ghcr.io/aquasecurity/node-collector:0.2.0	sha256:e302a7ba0ad670610a62e9feb8f25c0a3a9ecb8ee957245e491be28f21d7ea9f	verified	cosign:tag-based	2024-05-08T10:29:52Z	-
+image	ghcr.io/aquasecurity/node-collector:0.2.0-amd64	sha256:909d637e5fd070caaf1c37719d0ad7f13cf005b10ab0260f0352897ba0f08a33	verified	cosign:tag-based	2024-05-08T10:29:49Z	-
+image	ghcr.io/aquasecurity/node-collector:0.2.0-arm64	sha256:080db7dc27c8e54a8eecc55814714fb18bbd02ba2851b1be37e484c6774ccdd5	verified	cosign:tag-based	2024-05-08T10:29:50Z	-
+image	ghcr.io/aquasecurity/node-collector:0.2.1	sha256:fc4822cea3557223b949fad54fa414e16b7b5f22dd3b34d2e338f60a750059a4	verified	cosign:tag-based	2024-05-16T06:07:49Z	-
+image	ghcr.io/aquasecurity/node-collector:0.2.1-amd64	sha256:b3c6a739e7fc30566f83cb125f4aeac4257af8141818d400640285c4f4a1178a	verified	cosign:tag-based	2024-05-16T06:07:44Z	-
+image	ghcr.io/aquasecurity/node-collector:0.2.1-arm64	sha256:f6535a7d3a6ee01cd62033952fd03994922ca7e0b6693cdfbd57b4dfcc89d3c9	verified	cosign:tag-based	2024-05-16T06:07:47Z	-
+image	ghcr.io/aquasecurity/node-collector:0.2.2	sha256:624ef638e56a503d690604061c57e891cf4d3c0519e1c536320f857dada0ba56	verified	cosign:tag-based	2024-05-23T06:43:32Z	-
+image	ghcr.io/aquasecurity/node-collector:0.2.2-amd64	sha256:3f3a45c20f3759b40d9b67f47d10ba1be833f56471ff352dc209bbfede703cdf	verified	cosign:tag-based	2024-05-23T06:43:28Z	-
+image	ghcr.io/aquasecurity/node-collector:0.2.2-arm64	sha256:bd071723cb773ff52a136f3ed3602e4dc85b7e9fbcc6e592e71086adcba50e88	verified	cosign:tag-based	2024-05-23T06:43:30Z	-
+image	ghcr.io/aquasecurity/node-collector:0.3.0	sha256:d7c61c260160f9b24b6db8c906126895c8384882d660cf2839ff507d65ab9e38	verified	cosign:tag-based	2024-06-05T06:49:37Z	-
+image	ghcr.io/aquasecurity/node-collector:0.3.0-amd64	sha256:c390e1fdbfbaa924178f919f6ec34eda8829c3a646c507c5a8a0e588611cb93f	verified	cosign:tag-based	2024-06-05T06:49:33Z	-
+image	ghcr.io/aquasecurity/node-collector:0.3.0-arm64	sha256:a31c93cac1fffe47e6520e8d3130de1f6d1c77eb57c67fc66ea0c7f80679b57d	verified	cosign:tag-based	2024-06-05T06:49:35Z	-
+image	ghcr.io/aquasecurity/node-collector:0.3.1	sha256:f4702ce4667388f0219d6248d623a7e816231c2d4561d6af01c3ae053e524025	verified	cosign:tag-based	2024-06-24T10:56:15Z	-
+image	ghcr.io/aquasecurity/node-collector:0.3.1-amd64	sha256:1a71cf109dc167af84c636fd07c0526ef601ed9f67234115d6ae52b5c013866a	verified	cosign:tag-based	2024-06-24T10:56:12Z	-
+image	ghcr.io/aquasecurity/node-collector:0.3.1-arm64	sha256:1e9a8b48df48dfa2933fc9c918618755f24e9a4eea5fcf31e20a025d719aefd2	verified	cosign:tag-based	2024-06-24T10:56:14Z	-
 release	v0.0.1	69659632d073dc30ca5e72b9154306e77efd48a6	-			2022-12-25T10:51:03Z
 release	v0.0.2	92a3e14b5c368b0f8003b89f8c8979b6c5bf422f	-			2022-12-27T07:46:35Z
 release	v0.0.3	434ddc4fa423443b7e9e9a6f624e8569f43128ab	-			2023-01-04T09:44:35Z
