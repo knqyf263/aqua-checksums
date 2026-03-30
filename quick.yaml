@@ -193,3 +193,6 @@ targets:
       tags: true
     images:
       - repository: ghcr.io/aquasecurity/node-collector
+        # Monitor only 0.3.x+.
+        exclude_tags:
+          - "0.[0-2]*"
