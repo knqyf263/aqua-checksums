@@ -106,3 +106,5 @@ targets:
       repo: k8s-node-collector
       releases: true
       tags: true
+    images:
+      - repository: ghcr.io/aquasecurity/node-collector
