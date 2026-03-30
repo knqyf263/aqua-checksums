@@ -1,0 +1,143 @@
+# Supply chain integrity monitoring
+#
+# Two-tier monitoring strategy:
+#   Quick (every 10 min): recent tags + new release detection, no cosign
+#   Full  (every 6h):     all tags + cosign verification + deep asset check
+
+name: Check
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"  # Quick check every 10 minutes
+    - cron: "0 */6 * * *"   # Full check every 6 hours
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Check mode"
+        required: true
+        default: "quick"
+        type: choice
+        options:
+          - quick
+          - full
+      debug:
+        description: "Enable debug logging"
+        required: false
+        type: boolean
+        default: false
+
+env:
+  CHECK_IMAGE: ghcr.io/knqyf263/aqua-checksums@sha256:c1b998fd1c7f8a832485fbe8b67de9e06e4ea75da66fec8a8477c59fbba752ba
+
+permissions:
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Pull checker image
+        run: docker pull ${{ env.CHECK_IMAGE }}
+
+      - name: Determine check mode
+        id: mode
+        env:
+          INPUT_MODE: ${{ inputs.mode }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "mode=$INPUT_MODE" >> "$GITHUB_OUTPUT"
+          elif [ "$SCHEDULE" = "0 */6 * * *" ]; then
+            echo "mode=full" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=quick" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run quick check
+        id: quick
+        if: steps.mode.outputs.mode == 'quick'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEBUG: ${{ inputs.debug }}
+        run: |
+          set -o pipefail
+          args="--skip cosign --on-missing-state skip --config /work/quick.yaml --state /work/state"
+          if [ "$DEBUG" = "true" ]; then args="--debug $args"; fi
+          docker run --rm --user "$(id -u):$(id -g)" -e GITHUB_TOKEN -v "$PWD:/work" ${{ env.CHECK_IMAGE }} check $args 2>&1 | tee /tmp/check-output.txt
+
+      - name: Run full check
+        id: full
+        if: steps.mode.outputs.mode == 'full'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEBUG: ${{ inputs.debug }}
+        run: |
+          set -o pipefail
+          args="--deep --on-missing-state init --config /work/full.yaml --state /work/state"
+          if [ "$DEBUG" = "true" ]; then args="--debug $args"; fi
+          docker run --rm --user "$(id -u):$(id -g)" -e GITHUB_TOKEN -v "$PWD:/work" ${{ env.CHECK_IMAGE }} check $args 2>&1 | tee /tmp/check-output.txt
+
+      - name: Handle findings
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          CHECK_MODE: ${{ steps.mode.outputs.mode }}
+          QUICK_OUTCOME: ${{ steps.quick.outcome }}
+          FULL_OUTCOME: ${{ steps.full.outcome }}
+        run: |
+          # Determine if check failed
+          if [ "$QUICK_OUTCOME" != "failure" ] && [ "$FULL_OUTCOME" != "failure" ]; then
+            echo "Check passed."
+            exit 0
+          fi
+
+          # Check if there's already an open alert issue
+          existing=$(gh issue list --state open --label "integrity-alert" --json number --jq 'length')
+          if [ "$existing" -gt 0 ]; then
+            echo "::warning::Check failed but an open issue already exists. Skipping."
+            exit 0
+          fi
+
+          # Create new issue
+          findings=""
+          if [ -f /tmp/check-output.txt ]; then
+            findings=$(grep -v '^time=' /tmp/check-output.txt | head -100)
+          fi
+
+          body="Supply chain integrity check failed. Investigate immediately.
+
+          **Run:** ${RUN_URL}
+          **Mode:** ${CHECK_MODE}
+          "
+
+          if [ -n "$findings" ]; then
+            body="${body}
+          <details>
+          <summary>Findings</summary>
+
+          \`\`\`
+          ${findings}
+          \`\`\`
+
+          </details>
+          "
+          fi
+
+          body="${body}
+          This issue was automatically created by the supply chain integrity checker."
+
+          gh issue create \
+            --title "Integrity check failed (${CHECK_MODE}): $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --label "integrity-alert" \
+            --assignee knqyf263 \
+            --body "$body"
+
+          exit 1

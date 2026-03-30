@@ -1,0 +1,184 @@
+# Quick check: all tags, no cosign verification, no deep asset download.
+# Run frequently (every 10 minutes) to detect attacks promptly.
+# Usage: vigilis check --skip cosign --config quick.yaml --state state
+
+defaults:
+  on_new_release: error
+  cosign:
+    identity: "https://github\\.com/aquasecurity/"
+    oidc_issuer: "https://token\\.actions\\.githubusercontent\\.com"
+    required: false
+    exclude_tags:
+      - "canary"
+      - "*-SNAPSHOT-*"
+      - "*-amd64"
+      - "*-arm64"
+      - "*-arm64v8"
+      - "*-ppc64le"
+      - "*-s390x"
+  tlog_timestamp_tolerance: 24h
+  assets: true
+  image_exclude_tags:
+    - "*-amd64"
+    - "*-arm64"
+    - "*-arm64v8"
+    - "*-ppc64le"
+    - "*-s390x"
+    - "latest"
+
+targets:
+  - name: trivy
+    github:
+      owner: aquasecurity
+      repo: trivy
+      releases: true
+      tags: true
+    images:
+      - repository: ghcr.io/aquasecurity/trivy
+        exclude_tags:
+          - "0.[0-9].*"
+          - "0.[0-5]*"
+      - repository: public.ecr.aws/aquasecurity/trivy
+        exclude_tags:
+          - "0.[0-9].*"
+          - "0.[0-5]*"
+      - repository: docker.io/aquasec/trivy
+        exclude_tags:
+          - "0.[0-9].*"
+          - "0.[0-5]*"
+    tags:
+      exclude:
+        - "0.69.4"
+        - "0.69.5"
+        - "0.69.6"
+
+  - name: trivy-action
+    github:
+      owner: aquasecurity
+      repo: trivy-action
+      releases: true
+      tags: true
+    assets: false
+
+  - name: setup-trivy
+    github:
+      owner: aquasecurity
+      repo: setup-trivy
+      releases: true
+      tags: true
+    assets: false
+
+  - name: kube-bench
+    github:
+      owner: aquasecurity
+      repo: kube-bench
+      releases: true
+      tags: true
+    images:
+      - repository: docker.io/aquasec/kube-bench
+        # Monitor only v0.15.x+. Excludes commit SHA tags and old versions.
+        exclude_tags:
+          - "[0-9]*"
+          - "[a-u]*"
+          - "[w-z]*"
+          - "v0.[0-9]"
+          - "v0.[0-9].*"
+          - "v0.[0-9]-*"
+          - "v0.1[0-4]*"
+          - "latest"
+
+  - name: trivy-operator
+    github:
+      owner: aquasecurity
+      repo: trivy-operator
+      releases: true
+      tags: true
+    images:
+      - repository: ghcr.io/aquasecurity/trivy-operator
+        exclude_tags:
+          - "0.[0-9].*"
+          - "0.[0-1]*"
+          - "0.2*"
+          - "*-amd64"
+          - "*-arm64"
+          - "*-ppc64le"
+          - "*-s390x"
+          - "*-ubi9-*"
+          - "e2e"
+          - "main*"
+      - repository: docker.io/aquasec/trivy-operator
+        exclude_tags:
+          - "0.[0-9].*"
+          - "0.[0-1]*"
+          - "0.2*"
+          - "*-amd64"
+          - "*-arm64"
+          - "*-ppc64le"
+          - "*-s390x"
+          - "*-ubi9-*"
+          - "e2e"
+          - "main*"
+
+  - name: tfsec
+    github:
+      owner: aquasecurity
+      repo: tfsec
+      releases: true
+      tags: true
+    images:
+      # Monitor only latest minor (v1.28.x). tfsec is archived.
+      - repository: ghcr.io/aquasecurity/tfsec
+        exclude_tags:
+          - "v0.*"
+          - "v1.[0-9]-*"
+          - "v1.[0-9].*"
+          - "v1.[0-9]"
+          - "v1.1*"
+          - "v1.2[0-7]*"
+          - "latest"
+      - repository: docker.io/aquasec/tfsec
+        exclude_tags:
+          - "v0.*"
+          - "v1.[0-9]-*"
+          - "v1.[0-9].*"
+          - "v1.[0-9]"
+          - "v1.1*"
+          - "v1.2[0-7]*"
+          - "latest"
+
+  - name: tracee
+    github:
+      owner: aquasecurity
+      repo: tracee
+      releases: true
+      tags: true
+    images:
+      - repository: docker.io/aquasec/tracee
+        # Monitor only 0.24.x+. Excludes slim, dev, arch, and old versions.
+        exclude_tags:
+          - "0.[0-9].*"
+          - "0.[0-1]*"
+          - "0.2[0-3]*"
+          - "dev*"
+          - "aarch64*"
+          - "x86_64*"
+          - "slim*"
+          - "v*"
+          - "full"
+          - "*-full"
+
+  - name: kube-hunter
+    github:
+      owner: aquasecurity
+      repo: kube-hunter
+      releases: true
+      tags: true
+    images:
+      - repository: docker.io/aquasec/kube-hunter
+        # Monitor only 0.6.x+. Excludes build number tags and old versions.
+        exclude_tags:
+          - "[1-9]*"
+          - "0.[0-5]*"
+          - "aqua"
+          - "edge"
+          - "latest"
