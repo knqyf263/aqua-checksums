@@ -27,6 +27,7 @@ defaults:
     - "*-ppc64le"
     - "*-s390x"
     - "latest"
+    - "canary"
 
 targets:
   - name: trivy
