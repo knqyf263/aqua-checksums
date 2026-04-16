@@ -18,6 +18,8 @@ defaults:
       - "*-s390x"
   tlog_timestamp_tolerance: 24h
   assets: true
+  image_exclude_tags:
+    - "canary"
 
 targets:
   - name: trivy
