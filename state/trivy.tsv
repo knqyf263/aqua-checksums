@@ -1810,6 +1810,30 @@ asset	v0.7.0/trivy_0.7.0_Linux-ARM64.tar.gz	sha256:659af85461c651fea9049a0d5e098
 asset	v0.7.0/trivy_0.7.0_checksums.txt	sha256:7698de5126ed8d0ef519fcce84f1e818d3a59bcbc34d51b711e6490fde229c4c	unsigned	-		2020-05-12T10:13:34Z
 asset	v0.7.0/trivy_0.7.0_macOS-32bit.tar.gz	sha256:2face1afb1310fa6a36206240656f8170f53bbaca25e0a51ab325e07d42fefe6	unsigned	-		2020-05-12T10:13:34Z
 asset	v0.7.0/trivy_0.7.0_macOS-64bit.tar.gz	sha256:015d2b866195d0172409bd81b3aca83373a11cc6e4bc6a9df28672306d99976d	unsigned	-		2020-05-12T10:13:34Z
+asset	v0.70.0/bom.json	sha256:65685f6259a2d5035017430def688bc64affc51f1a2b606cf9945ba8c16c7828	unsigned	-		2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_FreeBSD-64bit.tar.gz	sha256:a162b0f1d3e8565152ab8ac6142452fba4fba0aa09de9c8eab238e8c439ce091	verified	sigstore:bundle:json	2026-04-17T06:45:25Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-32bit.deb	sha256:03e66cc829292ae03ad806b452d8a9bb508073cf46405de97662d7d3728064c9	verified	sigstore:bundle:json	2026-04-17T06:45:42Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-32bit.rpm	sha256:02186791a8d5f8f0ecb2a5e8badbcc4e9f38677e3e730a5acbf57254fbef1541	verified	sigstore:bundle:json	2026-04-17T06:45:54Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-32bit.tar.gz	sha256:b98d72c3a81ae13ace8f45e4710089087ede421deead5ab8842d51103ca7b3d9	verified	sigstore:bundle:json	2026-04-17T06:45:29Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-64bit.deb	sha256:a9f6ce99fa942759ee914d821b9ad38b6d6887e7d1b4d4415c1c9c7387c7bc94	verified	sigstore:bundle:json	2026-04-17T06:45:45Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-64bit.rpm	sha256:dd87e7e1b0947fa0529098c78c7336c6b01fd2be33b6dd832e71ba2e5b62b9d5	verified	sigstore:bundle:json	2026-04-17T06:45:56Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-64bit.tar.gz	sha256:8b4376d5d6befe5c24d503f10ff136d9e0c49f9127a4279fd110b727929a5aa9	verified	sigstore:bundle:json	2026-04-17T06:45:20Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-ARM.deb	sha256:2a70f06268d962337f0211e282b244c9550389b237d1fbf46c835f3a3139bfa6	verified	sigstore:bundle:json	2026-04-17T06:45:39Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-ARM.rpm	sha256:1b7adb9da7a1ecbee74043f4c44d22f5c8188ae0eceedd56c0dd5e44d8b74ffb	verified	sigstore:bundle:json	2026-04-17T06:45:53Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-ARM.tar.gz	sha256:12537cc6bf3f45e28e0b6b8bea0382ec9fabb468e0c3372e376474d5002c2ffe	verified	sigstore:bundle:json	2026-04-17T06:45:15Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-ARM64.deb	sha256:d3e3379b9753bbb911a3af924c1465138518cbca34eb6c0c7550c7e15bc7ebb8	verified	sigstore:bundle:json	2026-04-17T06:46:05Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-ARM64.rpm	sha256:8e11415036402db7a5653185ea7f7d2c48d54caa34323df2ddf8616ae88d630a	verified	sigstore:bundle:json	2026-04-17T06:45:57Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-ARM64.tar.gz	sha256:2f6bb988b553a1bbac6bdd1ce890f5e412439564e17522b88a4541b4f364fc8d	verified	sigstore:bundle:json	2026-04-17T06:45:18Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-PPC64LE.deb	sha256:463760c118da40cbe50a12261767823f179f2eb568be44a30d9e7e684f1a3f92	verified	sigstore:bundle:json	2026-04-17T06:45:37Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-PPC64LE.rpm	sha256:009c6b6374be45af2260e119636960641eb6145de8ba7a1d9bcad1d090651bf0	verified	sigstore:bundle:json	2026-04-17T06:45:47Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-PPC64LE.tar.gz	sha256:ddc8fb59164e16a9973f46b77b7556de2923ac295731910822f0851ec9edfb01	verified	sigstore:bundle:json	2026-04-17T06:45:33Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-s390x.deb	sha256:b86a92507b3230d7898cecd697279afa2c5d1b4ef65cbeae29d40bfb5d5a155f	verified	sigstore:bundle:json	2026-04-17T06:46:07Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-s390x.rpm	sha256:5dff6563443bb488b362777e7de58cad03303b98749664b3b32e5af193c42a18	verified	sigstore:bundle:json	2026-04-17T06:46:03Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_Linux-s390x.tar.gz	sha256:92ec9caffdcc32d43b76d21d4ecd6ea2975a2b37e050d5f79e17651c490b1753	verified	sigstore:bundle:json	2026-04-17T06:45:22Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_checksums.txt	sha256:c45281240bb9211ea9e830fc0bf5cf8acf7c0ca830feb64ac8a0aa932c5c92d9	verified	sigstore:bundle:json	2026-04-17T06:46:08Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_macOS-64bit.tar.gz	sha256:52d531452b19e7593da29366007d02a810e1e0080d02f9cf6a1afb46c35aaa93	verified	sigstore:bundle:json	2026-04-17T06:45:31Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_macOS-ARM64.tar.gz	sha256:68e543c51dcc96e1c344053a4fde9660cf602c25565d9f09dc17dd41e13b838a	verified	sigstore:bundle:json	2026-04-17T06:45:27Z	2026-04-17T06:50:02Z
+asset	v0.70.0/trivy_0.70.0_windows-64bit.zip	sha256:eea5442eab86f9e26cd718d7618d43899e72a83767619e8bee47911bddbfb825	verified	sigstore:bundle:json	2026-04-17T06:45:35Z	2026-04-17T06:50:02Z
 asset	v0.8.0/trivy_0.8.0_Linux-32bit.deb	sha256:c1e14b0e36becc1289ea1d7fed98f072f583e07424ce8dd9771784e91e7c006c	unsigned	-		2020-05-27T14:23:27Z
 asset	v0.8.0/trivy_0.8.0_Linux-32bit.rpm	sha256:d3de23fdae823a0412a8191a1fdc6a0875c53afbc764d645d9fd824fbbcb1dfc	unsigned	-		2020-05-27T14:23:27Z
 asset	v0.8.0/trivy_0.8.0_Linux-32bit.tar.gz	sha256:4cfde2be4aa182382ee0f3a7ba66ed3dc351429c34ae57c12b71aa659b621f7e	unsigned	-		2020-05-27T14:23:27Z
@@ -2489,6 +2513,11 @@ image	docker.io/aquasec/trivy:0.69.3-arm64	sha256:532de2ce287f594fbfbd91853c6d09
 image	docker.io/aquasec/trivy:0.69.3-ppc64le	sha256:3de26f1d2c6e205d2eeb4e89cb5406c9b522739aba39ca7ac6f3655a85bc1428	skipped			-
 image	docker.io/aquasec/trivy:0.69.3-s390x	sha256:d9e31ba03445c752ee9cbae9d4074a618ea293811d1b418d5d68fa5226788721	skipped			-
 image	docker.io/aquasec/trivy:0.7.0	sha256:23859fa9dcaaaa08deab48f0db2d643339e6e5a1060536f9a17bc6eb0517d332	unsigned			-
+image	docker.io/aquasec/trivy:0.70.0	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	unsigned	-		-
+image	docker.io/aquasec/trivy:0.70.0-amd64	sha256:85e87be1a96459c38a4eea47dc64eb2d342bb14cd4b4cef96adcf6ff03378b7c	skipped	-		-
+image	docker.io/aquasec/trivy:0.70.0-arm64	sha256:06c0a1359e4d745c6d709f5b64421db79fe0b5602c87d6eb5d6ba7d3d79d91ab	skipped	-		-
+image	docker.io/aquasec/trivy:0.70.0-ppc64le	sha256:6d2abdf6a6fcaa5d48921f0b372bee9ea3f4c29d028eec3e3e5a2d90d87feadf	skipped	-		-
+image	docker.io/aquasec/trivy:0.70.0-s390x	sha256:1e480b4dc4d70168b6eeeebb64d101954a1e310cd8d4ba8c88c77c990659d63e	skipped	-		-
 image	docker.io/aquasec/trivy:0.8.0	sha256:ea4a5e601ae3e995bfde94f8280abdd4a3037df2d5c0bf0c77976a8af05fda2e	unsigned			-
 image	docker.io/aquasec/trivy:0.9.0	sha256:13ea1927efa08055c8d697530ccc6a6771400c1a1300fef8ddc7043ec98a90e5	unsigned			-
 image	docker.io/aquasec/trivy:0.9.1	sha256:5020dac24a63ef4f24452a0c63ebbfe93a5309e40f6353d1ee8221d2184ee954	unsigned			-
@@ -3091,6 +3120,11 @@ image	ghcr.io/aquasecurity/trivy:0.69.3-amd64	sha256:7228e304ae0f610a1fad937baa4
 image	ghcr.io/aquasecurity/trivy:0.69.3-arm64	sha256:532de2ce287f594fbfbd91853c6d0910517cc87b01501b73b358b3d31b4eb87c	skipped	-		-
 image	ghcr.io/aquasecurity/trivy:0.69.3-ppc64le	sha256:3de26f1d2c6e205d2eeb4e89cb5406c9b522739aba39ca7ac6f3655a85bc1428	skipped	-		-
 image	ghcr.io/aquasecurity/trivy:0.69.3-s390x	sha256:d9e31ba03445c752ee9cbae9d4074a618ea293811d1b418d5d68fa5226788721	skipped	-		-
+image	ghcr.io/aquasecurity/trivy:0.70.0	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	verified	sigstore:bundle:oci	2026-04-17T06:49:33Z	-
+image	ghcr.io/aquasecurity/trivy:0.70.0-amd64	sha256:85e87be1a96459c38a4eea47dc64eb2d342bb14cd4b4cef96adcf6ff03378b7c	skipped	-		-
+image	ghcr.io/aquasecurity/trivy:0.70.0-arm64	sha256:06c0a1359e4d745c6d709f5b64421db79fe0b5602c87d6eb5d6ba7d3d79d91ab	skipped	-		-
+image	ghcr.io/aquasecurity/trivy:0.70.0-ppc64le	sha256:6d2abdf6a6fcaa5d48921f0b372bee9ea3f4c29d028eec3e3e5a2d90d87feadf	skipped	-		-
+image	ghcr.io/aquasecurity/trivy:0.70.0-s390x	sha256:1e480b4dc4d70168b6eeeebb64d101954a1e310cd8d4ba8c88c77c990659d63e	skipped	-		-
 image	ghcr.io/aquasecurity/trivy:latest	sha256:bcc376de8d77cfe086a917230e818dc9f8528e3c852f7b1aff648949b6258d1c	verified	sigstore:bundle:oci	2026-03-03T13:14:19Z	-
 image	ghcr.io/aquasecurity/trivy:latest-amd64	sha256:7228e304ae0f610a1fad937baa463598cadac0c2ac4027cc68f3a8b997115689	skipped	-		-
 image	ghcr.io/aquasecurity/trivy:latest-arm64	sha256:532de2ce287f594fbfbd91853c6d0910517cc87b01501b73b358b3d31b4eb87c	skipped	-		-
@@ -3689,6 +3723,11 @@ image	public.ecr.aws/aquasecurity/trivy:0.69.3-amd64	sha256:7228e304ae0f610a1fad
 image	public.ecr.aws/aquasecurity/trivy:0.69.3-arm64	sha256:532de2ce287f594fbfbd91853c6d0910517cc87b01501b73b358b3d31b4eb87c	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:0.69.3-ppc64le	sha256:3de26f1d2c6e205d2eeb4e89cb5406c9b522739aba39ca7ac6f3655a85bc1428	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:0.69.3-s390x	sha256:d9e31ba03445c752ee9cbae9d4074a618ea293811d1b418d5d68fa5226788721	skipped	-		-
+image	public.ecr.aws/aquasecurity/trivy:0.70.0	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	unsigned	-		-
+image	public.ecr.aws/aquasecurity/trivy:0.70.0-amd64	sha256:85e87be1a96459c38a4eea47dc64eb2d342bb14cd4b4cef96adcf6ff03378b7c	skipped	-		-
+image	public.ecr.aws/aquasecurity/trivy:0.70.0-arm64	sha256:06c0a1359e4d745c6d709f5b64421db79fe0b5602c87d6eb5d6ba7d3d79d91ab	skipped	-		-
+image	public.ecr.aws/aquasecurity/trivy:0.70.0-ppc64le	sha256:6d2abdf6a6fcaa5d48921f0b372bee9ea3f4c29d028eec3e3e5a2d90d87feadf	skipped	-		-
+image	public.ecr.aws/aquasecurity/trivy:0.70.0-s390x	sha256:1e480b4dc4d70168b6eeeebb64d101954a1e310cd8d4ba8c88c77c990659d63e	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:latest	sha256:bcc376de8d77cfe086a917230e818dc9f8528e3c852f7b1aff648949b6258d1c	verified	sigstore:bundle:oci	2026-03-19T18:25:13Z	-
 image	public.ecr.aws/aquasecurity/trivy:latest-amd64	sha256:7228e304ae0f610a1fad937baa463598cadac0c2ac4027cc68f3a8b997115689	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:latest-arm64	sha256:532de2ce287f594fbfbd91853c6d0910517cc87b01501b73b358b3d31b4eb87c	skipped	-		-
@@ -3775,6 +3814,7 @@ release	v0.6.0	ac5f3131299c2d363b27cc60b7252994afa4aa76	-	-		2020-04-15T13:49:51
 release	v0.69.2	cfa322ed23f2e33ef1632ae3a5a8c7172f06a5c3	-	-		2026-03-01T19:14:14Z
 release	v0.69.3	6fb20c8edd70745d6b34bff0387b53b03c8a760a	-	-		2026-03-03T13:14:48Z
 release	v0.7.0	09442d65f291865b1e2cab2f1622167e95dc0161	-	-		2020-05-12T10:13:34Z
+release	v0.70.0	8a3177aedf7ee0864920eb1852eef031cd3742b8	-	-		2026-04-17T06:50:02Z
 release	v0.8.0	78b7529172de7c4dc0de03e7cfcc426e9484b097	-	-		2020-05-27T14:23:27Z
 release	v0.9.0	020c4a3b140b3ee329eba8926de79e2889ec9312	-	-		2020-06-02T18:32:47Z
 release	v0.9.1	65cbe3cac351520cf12b05d19c7aa2dfd9670c0b	-	-		2020-06-08T14:22:37Z
@@ -3957,6 +3997,7 @@ tag	v0.69.1	123888b40d1e68e84edd11c5a9643220fa20f9da	-	-		-
 tag	v0.69.2	cfa322ed23f2e33ef1632ae3a5a8c7172f06a5c3	-	-		-
 tag	v0.69.3	6fb20c8edd70745d6b34bff0387b53b03c8a760a	-	-		-
 tag	v0.7.0	09442d65f291865b1e2cab2f1622167e95dc0161	-	-		-
+tag	v0.70.0	8a3177aedf7ee0864920eb1852eef031cd3742b8	-	-		-
 tag	v0.8.0	78b7529172de7c4dc0de03e7cfcc426e9484b097	-	-		-
 tag	v0.9.0	020c4a3b140b3ee329eba8926de79e2889ec9312	-	-		-
 tag	v0.9.1	65cbe3cac351520cf12b05d19c7aa2dfd9670c0b	-	-		-
