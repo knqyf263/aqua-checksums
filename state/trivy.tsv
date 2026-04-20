@@ -2513,7 +2513,7 @@ image	docker.io/aquasec/trivy:0.69.3-arm64	sha256:532de2ce287f594fbfbd91853c6d09
 image	docker.io/aquasec/trivy:0.69.3-ppc64le	sha256:3de26f1d2c6e205d2eeb4e89cb5406c9b522739aba39ca7ac6f3655a85bc1428	skipped			-
 image	docker.io/aquasec/trivy:0.69.3-s390x	sha256:d9e31ba03445c752ee9cbae9d4074a618ea293811d1b418d5d68fa5226788721	skipped			-
 image	docker.io/aquasec/trivy:0.7.0	sha256:23859fa9dcaaaa08deab48f0db2d643339e6e5a1060536f9a17bc6eb0517d332	unsigned			-
-image	docker.io/aquasec/trivy:0.70.0	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	unsigned	-		-
+image	docker.io/aquasec/trivy:0.70.0	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	verified	sigstore:bundle:oci	2026-04-17T06:49:29Z	-
 image	docker.io/aquasec/trivy:0.70.0-amd64	sha256:85e87be1a96459c38a4eea47dc64eb2d342bb14cd4b4cef96adcf6ff03378b7c	skipped	-		-
 image	docker.io/aquasec/trivy:0.70.0-arm64	sha256:06c0a1359e4d745c6d709f5b64421db79fe0b5602c87d6eb5d6ba7d3d79d91ab	skipped	-		-
 image	docker.io/aquasec/trivy:0.70.0-ppc64le	sha256:6d2abdf6a6fcaa5d48921f0b372bee9ea3f4c29d028eec3e3e5a2d90d87feadf	skipped	-		-
@@ -2522,6 +2522,11 @@ image	docker.io/aquasec/trivy:0.8.0	sha256:ea4a5e601ae3e995bfde94f8280abdd4a3037
 image	docker.io/aquasec/trivy:0.9.0	sha256:13ea1927efa08055c8d697530ccc6a6771400c1a1300fef8ddc7043ec98a90e5	unsigned			-
 image	docker.io/aquasec/trivy:0.9.1	sha256:5020dac24a63ef4f24452a0c63ebbfe93a5309e40f6353d1ee8221d2184ee954	unsigned			-
 image	docker.io/aquasec/trivy:0.9.2	sha256:f37b2b23b0e92da0edf1c99e999549bfdaf01660a5a39b4bc507ec7bba5d9a9c	unsigned			-
+image	docker.io/aquasec/trivy:latest	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	verified	sigstore:bundle:oci	2026-04-17T06:49:29Z	-
+image	docker.io/aquasec/trivy:latest-amd64	sha256:85e87be1a96459c38a4eea47dc64eb2d342bb14cd4b4cef96adcf6ff03378b7c	skipped	-		-
+image	docker.io/aquasec/trivy:latest-arm64	sha256:06c0a1359e4d745c6d709f5b64421db79fe0b5602c87d6eb5d6ba7d3d79d91ab	skipped	-		-
+image	docker.io/aquasec/trivy:latest-ppc64le	sha256:6d2abdf6a6fcaa5d48921f0b372bee9ea3f4c29d028eec3e3e5a2d90d87feadf	skipped	-		-
+image	docker.io/aquasec/trivy:latest-s390x	sha256:1e480b4dc4d70168b6eeeebb64d101954a1e310cd8d4ba8c88c77c990659d63e	skipped	-		-
 image	ghcr.io/aquasecurity/trivy:0.11.0	sha256:c7762999ba5a93b71b211028a2ed1be1355e52ff04b2f341937ce7934c9feaf1	unsigned			-
 image	ghcr.io/aquasecurity/trivy:0.12.0	sha256:37af346e8b0100035df20f330c49f96cccfd809ddb0ab2d3ca26bbb781e1d81f	unsigned			-
 image	ghcr.io/aquasecurity/trivy:0.13.0	sha256:1fe6f29ea9b80a18815fcb93dcc0d890c973606a051765caa38692ee82dfc2c4	unsigned			-
@@ -3125,11 +3130,11 @@ image	ghcr.io/aquasecurity/trivy:0.70.0-amd64	sha256:85e87be1a96459c38a4eea47dc6
 image	ghcr.io/aquasecurity/trivy:0.70.0-arm64	sha256:06c0a1359e4d745c6d709f5b64421db79fe0b5602c87d6eb5d6ba7d3d79d91ab	skipped	-		-
 image	ghcr.io/aquasecurity/trivy:0.70.0-ppc64le	sha256:6d2abdf6a6fcaa5d48921f0b372bee9ea3f4c29d028eec3e3e5a2d90d87feadf	skipped	-		-
 image	ghcr.io/aquasecurity/trivy:0.70.0-s390x	sha256:1e480b4dc4d70168b6eeeebb64d101954a1e310cd8d4ba8c88c77c990659d63e	skipped	-		-
-image	ghcr.io/aquasecurity/trivy:latest	sha256:bcc376de8d77cfe086a917230e818dc9f8528e3c852f7b1aff648949b6258d1c	verified	sigstore:bundle:oci	2026-03-03T13:14:19Z	-
-image	ghcr.io/aquasecurity/trivy:latest-amd64	sha256:7228e304ae0f610a1fad937baa463598cadac0c2ac4027cc68f3a8b997115689	skipped	-		-
-image	ghcr.io/aquasecurity/trivy:latest-arm64	sha256:532de2ce287f594fbfbd91853c6d0910517cc87b01501b73b358b3d31b4eb87c	skipped	-		-
-image	ghcr.io/aquasecurity/trivy:latest-ppc64le	sha256:3de26f1d2c6e205d2eeb4e89cb5406c9b522739aba39ca7ac6f3655a85bc1428	skipped	-		-
-image	ghcr.io/aquasecurity/trivy:latest-s390x	sha256:d9e31ba03445c752ee9cbae9d4074a618ea293811d1b418d5d68fa5226788721	skipped	-		-
+image	ghcr.io/aquasecurity/trivy:latest	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	verified	sigstore:bundle:oci	2026-04-17T06:49:33Z	-
+image	ghcr.io/aquasecurity/trivy:latest-amd64	sha256:85e87be1a96459c38a4eea47dc64eb2d342bb14cd4b4cef96adcf6ff03378b7c	skipped	-		-
+image	ghcr.io/aquasecurity/trivy:latest-arm64	sha256:06c0a1359e4d745c6d709f5b64421db79fe0b5602c87d6eb5d6ba7d3d79d91ab	skipped	-		-
+image	ghcr.io/aquasecurity/trivy:latest-ppc64le	sha256:6d2abdf6a6fcaa5d48921f0b372bee9ea3f4c29d028eec3e3e5a2d90d87feadf	skipped	-		-
+image	ghcr.io/aquasecurity/trivy:latest-s390x	sha256:1e480b4dc4d70168b6eeeebb64d101954a1e310cd8d4ba8c88c77c990659d63e	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:0.14.0	sha256:022f178f7df525c6e5eb4af51840af6f9e8e3fdbdcb2476c879f3774963b145a	unsigned			-
 image	public.ecr.aws/aquasecurity/trivy:0.17.0	sha256:a7073743d11cbd2124cbdcc0ac2d5a485e56244d403314028f5e2f32432cbbe5	unsigned			-
 image	public.ecr.aws/aquasecurity/trivy:0.17.0-amd64	sha256:147802259668540e78c473cc123b127a14732d5b7502baba09371cf09164b784	skipped	-		-
@@ -3723,16 +3728,16 @@ image	public.ecr.aws/aquasecurity/trivy:0.69.3-amd64	sha256:7228e304ae0f610a1fad
 image	public.ecr.aws/aquasecurity/trivy:0.69.3-arm64	sha256:532de2ce287f594fbfbd91853c6d0910517cc87b01501b73b358b3d31b4eb87c	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:0.69.3-ppc64le	sha256:3de26f1d2c6e205d2eeb4e89cb5406c9b522739aba39ca7ac6f3655a85bc1428	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:0.69.3-s390x	sha256:d9e31ba03445c752ee9cbae9d4074a618ea293811d1b418d5d68fa5226788721	skipped	-		-
-image	public.ecr.aws/aquasecurity/trivy:0.70.0	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	unsigned	-		-
+image	public.ecr.aws/aquasecurity/trivy:0.70.0	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	verified	sigstore:bundle:oci	2026-04-17T06:49:24Z	-
 image	public.ecr.aws/aquasecurity/trivy:0.70.0-amd64	sha256:85e87be1a96459c38a4eea47dc64eb2d342bb14cd4b4cef96adcf6ff03378b7c	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:0.70.0-arm64	sha256:06c0a1359e4d745c6d709f5b64421db79fe0b5602c87d6eb5d6ba7d3d79d91ab	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:0.70.0-ppc64le	sha256:6d2abdf6a6fcaa5d48921f0b372bee9ea3f4c29d028eec3e3e5a2d90d87feadf	skipped	-		-
 image	public.ecr.aws/aquasecurity/trivy:0.70.0-s390x	sha256:1e480b4dc4d70168b6eeeebb64d101954a1e310cd8d4ba8c88c77c990659d63e	skipped	-		-
-image	public.ecr.aws/aquasecurity/trivy:latest	sha256:bcc376de8d77cfe086a917230e818dc9f8528e3c852f7b1aff648949b6258d1c	verified	sigstore:bundle:oci	2026-03-19T18:25:13Z	-
-image	public.ecr.aws/aquasecurity/trivy:latest-amd64	sha256:7228e304ae0f610a1fad937baa463598cadac0c2ac4027cc68f3a8b997115689	skipped	-		-
-image	public.ecr.aws/aquasecurity/trivy:latest-arm64	sha256:532de2ce287f594fbfbd91853c6d0910517cc87b01501b73b358b3d31b4eb87c	skipped	-		-
-image	public.ecr.aws/aquasecurity/trivy:latest-ppc64le	sha256:3de26f1d2c6e205d2eeb4e89cb5406c9b522739aba39ca7ac6f3655a85bc1428	skipped	-		-
-image	public.ecr.aws/aquasecurity/trivy:latest-s390x	sha256:d9e31ba03445c752ee9cbae9d4074a618ea293811d1b418d5d68fa5226788721	skipped	-		-
+image	public.ecr.aws/aquasecurity/trivy:latest	sha256:be1190afcb28352bfddc4ddeb71470835d16462af68d310f9f4bca710961a41e	verified	sigstore:bundle:oci	2026-04-17T06:49:24Z	-
+image	public.ecr.aws/aquasecurity/trivy:latest-amd64	sha256:85e87be1a96459c38a4eea47dc64eb2d342bb14cd4b4cef96adcf6ff03378b7c	skipped	-		-
+image	public.ecr.aws/aquasecurity/trivy:latest-arm64	sha256:06c0a1359e4d745c6d709f5b64421db79fe0b5602c87d6eb5d6ba7d3d79d91ab	skipped	-		-
+image	public.ecr.aws/aquasecurity/trivy:latest-ppc64le	sha256:6d2abdf6a6fcaa5d48921f0b372bee9ea3f4c29d028eec3e3e5a2d90d87feadf	skipped	-		-
+image	public.ecr.aws/aquasecurity/trivy:latest-s390x	sha256:1e480b4dc4d70168b6eeeebb64d101954a1e310cd8d4ba8c88c77c990659d63e	skipped	-		-
 release	v0.0.1	3b8aedad58521df5d3c271ec31250a149f089e8e	-	-		2019-05-07T06:52:24Z
 release	v0.0.10	2b5782c92076ce28161d6e8c4692c1a8e30c753e	-	-		2019-05-12T19:15:15Z
 release	v0.0.11	9006dd5d168aa5db7d83b62e5b92b8e83b138888	-	-		2019-05-13T06:20:12Z
