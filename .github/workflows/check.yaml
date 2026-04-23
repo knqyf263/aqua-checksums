@@ -27,7 +27,7 @@ on:
         default: false
 
 env:
-  CHECK_IMAGE: ghcr.io/knqyf263/aqua-checksums@sha256:60f14e07fd94a8f31432eb20fa07b81f94adeeafbcfc331ac1f809c0d5b9de71
+  CHECK_IMAGE: ghcr.io/knqyf263/aqua-checksums@sha256:4f096f0cc74154e262ce405d24fa87dc2e380928fde8035404dd4b9f29ee5f56
 
 permissions:
   issues: write
