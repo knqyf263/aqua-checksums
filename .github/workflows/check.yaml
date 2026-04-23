@@ -31,6 +31,8 @@ env:
 
 permissions:
   issues: write
+  contents: write
+  pull-requests: write
 
 jobs:
   check:
@@ -39,8 +41,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
 
       - name: Pull checker image
         run: docker pull ${{ env.CHECK_IMAGE }}
@@ -84,6 +84,71 @@ jobs:
           args="--deep --on-missing-state init --config /work/full.yaml --state /work/state"
           if [ "$DEBUG" = "true" ]; then args="--debug $args"; fi
           docker run --rm --user "$(id -u):$(id -g)" -e GITHUB_TOKEN -v "$PWD:/work" ${{ env.CHECK_IMAGE }} check $args 2>&1 | tee /tmp/check-output.txt
+
+      - name: Check for state changes
+        id: diff
+        run: |
+          if git diff --quiet state/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --stat state/
+          fi
+
+      - name: Create state-update PR
+        if: steps.mode.outputs.mode == 'full' && steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -e
+          # Ensure the label exists (idempotent).
+          gh label create "auto-state-update" --color "0E8A16" \
+            --description "Automated state update proposed by the integrity checker" \
+            --force >/dev/null
+
+          timestamp=$(date -u +%Y%m%d-%H%M%S)
+          branch="auto/state-update-${timestamp}-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add state/
+          git commit -m "Auto state update: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push origin "$branch"
+
+          findings=""
+          if [ -f /tmp/check-output.txt ]; then
+            findings=$(grep -v '^time=' /tmp/check-output.txt | head -100)
+          fi
+
+          body="Automated state update proposed by the full integrity check. Review the diff against the source of truth (release notes, signed artifacts) before merging.
+
+          **Run:** ${RUN_URL}
+          **Mode:** full
+          "
+
+          if [ -n "$findings" ]; then
+            body="${body}
+          <details>
+          <summary>Findings</summary>
+
+          \`\`\`
+          ${findings}
+          \`\`\`
+
+          </details>
+          "
+          fi
+
+          body="${body}
+          This PR was automatically created by the supply chain integrity checker. Do not merge without verifying digests against the source of truth."
+
+          gh pr create --draft \
+            --title "Auto state update: $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --label "auto-state-update" \
+            --assignee knqyf263 \
+            --body "$body" \
+            --head "$branch"
 
       - name: Handle findings
         env:
