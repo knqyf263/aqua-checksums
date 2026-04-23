@@ -115,3 +115,14 @@ targets:
       tags: true
     images:
       - repository: ghcr.io/aquasecurity/node-collector
+
+  - name: trivy-checks
+    github:
+      owner: aquasecurity
+      repo: trivy-checks
+      releases: true
+      tags: true
+    images:
+      - repository: docker.io/aquasec/trivy-checks
+      - repository: ghcr.io/aquasecurity/trivy-checks
+      - repository: ghcr.io/aquasecurity/trivy-policies
