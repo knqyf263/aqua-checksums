@@ -80,9 +80,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEBUG: ${{ inputs.debug }}
         run: |
-          # E2E PROBE: inject synthetic drift instead of running the real checker
-          echo "# e2e probe drift ${GITHUB_RUN_ID}" >> state/setup-trivy.tsv
-          echo "probe drift injected" | tee /tmp/check-output.txt
+          set -o pipefail
+          args="--deep --on-missing-state init --config /work/full.yaml --state /work/state"
+          if [ "$DEBUG" = "true" ]; then args="--debug $args"; fi
+          docker run --rm --user "$(id -u):$(id -g)" -e GITHUB_TOKEN -v "$PWD:/work" ${{ env.CHECK_IMAGE }} check $args 2>&1 | tee /tmp/check-output.txt
 
       - name: Check for state changes
         id: diff
