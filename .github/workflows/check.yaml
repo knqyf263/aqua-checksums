@@ -103,9 +103,9 @@ jobs:
         run: |
           set -e
           # Skip if there's already an open auto-state-update PR.
-          existing=$(gh pr list --state open --label "auto-state-update" --json number --jq 'length')
-          if [ "$existing" -gt 0 ]; then
-            echo "::warning::State changes detected but an open auto-state-update PR already exists. Skipping."
+          existing_pr=$(gh pr list --state open --label "auto-state-update" --json number --jq '.[0].number // empty')
+          if [ -n "$existing_pr" ]; then
+            echo "::warning::State changes detected but auto-state-update PR #${existing_pr} is already open. Skipping."
             exit 0
           fi
 
