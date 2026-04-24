@@ -1,4 +1,3 @@
 type	identifier	digest	signature	sig_method	tlog_timestamp	created_at
 release	v0.2.6	3fb12ec12f41e471780db15c232d5dd185dcb514	-			2026-03-19T21:43:56Z
 tag	v0.2.6	3fb12ec12f41e471780db15c232d5dd185dcb514	-			-
-# e2e probe drift 24882595586
