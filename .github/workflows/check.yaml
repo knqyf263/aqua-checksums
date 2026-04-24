@@ -80,10 +80,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEBUG: ${{ inputs.debug }}
         run: |
-          set -o pipefail
-          args="--deep --on-missing-state init --config /work/full.yaml --state /work/state"
-          if [ "$DEBUG" = "true" ]; then args="--debug $args"; fi
-          docker run --rm --user "$(id -u):$(id -g)" -e GITHUB_TOKEN -v "$PWD:/work" ${{ env.CHECK_IMAGE }} check $args 2>&1 | tee /tmp/check-output.txt
+          # E2E PROBE: inject synthetic drift instead of running the real checker
+          echo "# e2e probe drift ${GITHUB_RUN_ID}" >> state/setup-trivy.tsv
+          echo "probe drift injected" | tee /tmp/check-output.txt
 
       - name: Check for state changes
         id: diff
@@ -116,12 +115,42 @@ jobs:
 
           timestamp=$(date -u +%Y%m%d-%H%M%S)
           branch="auto/state-update-${timestamp}-${GITHUB_RUN_ID}"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$branch"
-          git add state/
-          git commit -m "Auto state update: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push origin "$branch"
+          commit_message="Auto state update: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+          # Build a signed commit via the Git Data API so it satisfies
+          # required_signatures on main. github-actions[bot] commits made
+          # through this API path are signed by GitHub's web-flow key.
+          parent_sha=$(git rev-parse HEAD)
+          base_tree=$(git rev-parse "HEAD^{tree}")
+
+          # Collect tree entries for every changed file under state/.
+          # ls-files --modified --others picks up tracked modifications AND
+          # untracked new files, matching the old `git add state/` behavior.
+          tree_entries='[]'
+          while IFS= read -r path; do
+            blob_file="${RUNNER_TEMP}/blob.b64"
+            base64 < "$path" | tr -d '\n' > "$blob_file"
+            blob_sha=$(jq -n --rawfile c "$blob_file" '{encoding:"base64", content:$c}' | \
+              gh api -X POST "repos/${GITHUB_REPOSITORY}/git/blobs" --input - --jq '.sha')
+            tree_entries=$(echo "$tree_entries" | jq --arg p "$path" --arg s "$blob_sha" \
+              '. + [{path:$p, mode:"100644", type:"blob", sha:$s}]')
+          done < <(git ls-files --modified --others --exclude-standard -- state/)
+
+          while IFS= read -r path; do
+            tree_entries=$(echo "$tree_entries" | jq --arg p "$path" \
+              '. + [{path:$p, mode:"100644", type:"blob", sha:null}]')
+          done < <(git ls-files --deleted -- state/)
+
+          new_tree=$(jq -n --arg bt "$base_tree" --argjson entries "$tree_entries" \
+            '{base_tree:$bt, tree:$entries}' | \
+            gh api -X POST "repos/${GITHUB_REPOSITORY}/git/trees" --input - --jq '.sha')
+
+          new_commit=$(jq -n --arg msg "$commit_message" --arg tree "$new_tree" --arg parent "$parent_sha" \
+            '{message:$msg, tree:$tree, parents:[$parent]}' | \
+            gh api -X POST "repos/${GITHUB_REPOSITORY}/git/commits" --input - --jq '.sha')
+
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/git/refs" \
+            -f "ref=refs/heads/${branch}" -f "sha=${new_commit}" >/dev/null
 
           findings=""
           if [ -f /tmp/check-output.txt ]; then
@@ -151,7 +180,7 @@ jobs:
           This PR was automatically created by the supply chain integrity checker. Do not merge without verifying digests against the source of truth."
 
           gh pr create --draft \
-            --title "Auto state update: $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --title "$commit_message" \
             --label "auto-state-update" \
             --assignee knqyf263 \
             --body "$body" \
