@@ -102,6 +102,13 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -e
+          # Skip if there's already an open auto-state-update PR.
+          existing=$(gh pr list --state open --label "auto-state-update" --json number --jq 'length')
+          if [ "$existing" -gt 0 ]; then
+            echo "::warning::State changes detected but an open auto-state-update PR already exists. Skipping."
+            exit 0
+          fi
+
           # Ensure the label exists (idempotent).
           gh label create "auto-state-update" --color "0E8A16" \
             --description "Automated state update proposed by the integrity checker" \
