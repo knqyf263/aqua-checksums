@@ -1323,7 +1323,7 @@ image	docker.io/aquasec/kube-bench:itai_cis_results	sha256:96e389af535e557b1c837
 image	docker.io/aquasec/kube-bench:json	sha256:42a8515a17e49315d96b90c085f1d9f9267059e0c0161dd377b91d9285a69dd1	unsigned			-
 image	docker.io/aquasec/kube-bench:k8s-1.8-support	sha256:010b4fc1a1a2dd22dab16700c71aea9743d37e86c5b3b471fb0ab56b947fc45e	unsigned			-
 image	docker.io/aquasec/kube-bench:kubectl-version	sha256:7e1ddc98d819d3bf62acfef0b8e84d1f6c053d23cbe8d9a0d5d5a818ad6c0bfc	unsigned			-
-image	docker.io/aquasec/kube-bench:latest	sha256:7a8fa32dce215f5920e0c9d7ae10a8e1e188993675f3ef5c4b4cbae3d342c168	unsigned			-
+image	docker.io/aquasec/kube-bench:latest	sha256:55944efcc149365469e0135d30dc9cba332dc437bce13704e14b4b5debeb2cc1	unsigned			-
 image	docker.io/aquasec/kube-bench:linux-amd64-01bcfe4	sha256:eed92c275bf22098379bd043dfd1a8bb125970a39bf4de4cd7bfcce9b0e992c5	unsigned			-
 image	docker.io/aquasec/kube-bench:linux-amd64-041c437	sha256:3f5425621607d222acfdd555162a449909cc45e0e72dfdb24b1581c479764611	unsigned			-
 image	docker.io/aquasec/kube-bench:linux-amd64-054c401	sha256:13bb946e47d270584d263a3f0ad4e36b988c2530991ba3d38a95cfb62fec0ec4	unsigned			-
@@ -1504,6 +1504,8 @@ image	docker.io/aquasec/kube-bench:lizrice-patch-5	sha256:aca92b551bf873594ab7c0
 image	docker.io/aquasec/kube-bench:logo	sha256:6be683adf679f5286d5dd1f3004e06327e11b7b7e034047af0243c1a2eae5bb5	unsigned			-
 image	docker.io/aquasec/kube-bench:lower-case-file-names-mkdocks	sha256:022be94331e80dd54580c45e66d56ec409b53b1235175812b123e80cd6379b0f	unsigned			-
 image	docker.io/aquasec/kube-bench:main	sha256:6c3a7ed70ff5e386dfc2d695d9154e9785715f335b136d14d3d58c6303629f9d	unsigned			-
+image	docker.io/aquasec/kube-bench:main-ubi	sha256:2c645c00cc3ef6534ee1cfd175c85a40dd97a1dee006727565b739d0bbc47208	unsigned			-
+image	docker.io/aquasec/kube-bench:main-ubi-fips	sha256:ce50d5506678a507a45568e898063a81e018fbf6eee6ebd4a034142cb8a577f2	unsigned			-
 image	docker.io/aquasec/kube-bench:manifest-extension	sha256:9cc6c80d9069555b392686d838d06bd5b566d07db3c1ccaae2829e33096c1f16	unsigned			-
 image	docker.io/aquasec/kube-bench:master-to-main	sha256:810869d01cd5640dff727d76dc647a89d9421dc5999f246e47c9a70a3e43c57c	unsigned			-
 image	docker.io/aquasec/kube-bench:migrate-to-bench-common	sha256:5e6d1a7e6b0c47b46c9baffce37a3ea6a5f59fbf195a931d10d2e5e114355318	unsigned			-
