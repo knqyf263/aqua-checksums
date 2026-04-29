@@ -20,6 +20,7 @@ defaults:
   assets: true
   image_exclude_tags:
     - "canary"
+    - "main*"
   # Tags whose digest is expected to move on each release (latest, arch variants).
   # A digest change on these tags updates state instead of raising an error.
   image_mutable_tags:

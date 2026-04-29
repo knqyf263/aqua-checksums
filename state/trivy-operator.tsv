@@ -3526,11 +3526,6 @@ image	docker.io/aquasec/trivy-operator:0.9.1-ubi8-arm64	sha256:10e596227a5cc80b7
 image	docker.io/aquasec/trivy-operator:0.9.1-ubi8-ppc64le	sha256:6762123154f3f7b08dfafb7e3ffc549a59943ee1ba11632024cd3441f455bcac	skipped			-
 image	docker.io/aquasec/trivy-operator:0.9.1-ubi8-s390x	sha256:b84007b8dea464838170d796ccda1c3addd1b79b659eaf46327951d9c76c0014	skipped			-
 image	docker.io/aquasec/trivy-operator:e2e	sha256:2740bcbadc79d2eef64a7f349450bdff2089981ac3fcc97f80f4d3c6b8ae361a	unsigned			-
-image	docker.io/aquasec/trivy-operator:main	sha256:93ce1337bc21d5ce121cefba332bbe1987fdec149b966d0c57c059de87a91151	unsigned			-
-image	docker.io/aquasec/trivy-operator:main-arm64	sha256:093cd6e242118dd4f75df4618089c1e9fd0f0adb0d819852f251348f2f724648	skipped			-
-image	docker.io/aquasec/trivy-operator:main-ppc64	sha256:eff066a273912ae9b3eddc4c24465734e08b9208c24b41da5708fa1bd581cb10	unsigned			-
-image	docker.io/aquasec/trivy-operator:main-ubi8-x86	sha256:a60b98e4b8db7a689c9b32b6302460e11d453a6f89e4dfa9ca39b15f2f812102	unsigned			-
-image	docker.io/aquasec/trivy-operator:main-x86	sha256:0af44022db2cd74a7f37d67574a5fd0a038c2baa1fe944ea38c62dcd670db7e7	unsigned			-
 image	ghcr.io/aquasecurity/trivy-operator:0.1.4	sha256:e8568f9332091cdfdd58858b5e3dfddf4b918e4e19f5988ef211d6ede3d445c5	verified	cosign:tag-based	2022-07-19T20:02:39Z	-
 image	ghcr.io/aquasecurity/trivy-operator:0.1.4-amd64	sha256:b8a785d785899c488ea042b57d07d24b2d295044cc53416059d67291f0ac3057	skipped			-
 image	ghcr.io/aquasecurity/trivy-operator:0.1.4-arm64	sha256:99f98be0b565123bd41cd24fb2f6acaba50e4cb28488378d8b37e5aff6237829	skipped			-
